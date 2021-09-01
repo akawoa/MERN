@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useState } from "react";
 import UserForm from './components/UserForm';
-import Results from './components/Results';
+
 
 function App() {
   const [ state, setState ] = useState({
@@ -14,7 +14,6 @@ function App() {
   return (
     <div className="App">
       <UserForm inputs={state} setInputs={setState} />
-      <Results data={state} />
     </div>
   );
 }
