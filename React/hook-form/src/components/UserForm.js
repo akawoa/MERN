@@ -16,13 +16,6 @@ const UserForm = (props) => {
         const [confirmPasswordError, setConfirmPasswordError] = useState("");
 
 
-        const onChange = (e) => {
-            setInputs({
-                inputs,
-                [e.target.name]: e.target.value
-            });
-        };
-
         const createUser = (e) => {
             e.preventDefault();
             const newUser = {firstName, lastName, email, password, confirmPassword};
