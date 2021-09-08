@@ -1,0 +1,10 @@
+https://pokeapi.co/api/v2/pokemon/mew
+
+https://pokeapi.co/api/v2/pokemon/celebi
+
+https://pokeapi.co/api/v2/pokemon/101
+
+
+https://pokeapi.co/api/v2/pokemon/99
+
+https://pokeapi.co/api/v2/pokemon/1
