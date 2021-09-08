@@ -27,11 +27,18 @@ const SingleObject = (props) => {
     // console.log(id);
     // console.log();
 
+    // useEffect(() => {
+    //     axios.get(endURL).then((response) => {
+    //         setData(response.data);
+    //         console.log("In use effect", response.data);
+    //     }).catch((response) => {history.pushState("/error")});
+    // }, [endURL]);
+
     useEffect(() => {
         axios.get(endURL).then((response) => {
             setData(response.data);
             console.log("In use effect", response.data);
-        });
+        }).catch((response) => {history.pushState("/error")});
     }, [endURL]);
 
     const renderResult = () => {

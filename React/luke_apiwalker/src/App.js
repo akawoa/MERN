@@ -37,6 +37,7 @@ function App() {
         if (shouldRedirect === true) {
           var newRedirectUrl = "/" + category + "/" + categoryId;
           console.log(newRedirectUrl);
+          // history.push("/planets");
             return <Redirect to={newRedirectUrl} />;
         }
     };
