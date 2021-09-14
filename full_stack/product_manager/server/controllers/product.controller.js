@@ -18,20 +18,19 @@ module.exports.createProduct = (req, res) => {
 
 // Export a function to update a product
 module.exports.updateExistingProduct = (req, res) => {
-    Product.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true})
+    Product.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true, runValidators: true})
     .then(updatedProduct => res.json({ product: updatedProduct }))
-    .catch(err => res.json({ message: "Something went wrong", 
-    error: err}))
+    .catch(err => res.status(400).json(err))
 };
 
 
-// Export a function to delete a product
+// DELETE
 module.exports.deleteAnExistingProduct = (req, res) => {
-    Product.deleteOne({ _id: request.params.id})
-        .then(result => res.json({ result: result}))
-        .catch(err => res.json({ message: "Something went wrong", 
-        error: err}));
-};
+    const {id} = req.params
+    Product.deleteOne({_id: id})
+        .then(confirmation => res.json(confirmation))
+        .catch(err => res.status(400).json(err))
+}
 
 // Export a function to get a single product
 module.exports.findOneSingleProduct = (req, res) => {
